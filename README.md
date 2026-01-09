@@ -45,5 +45,32 @@ PASSWORD=your_password
 python lsf_automation.py
 ```
 
+## Chrome & ChromeDriver
+
+Ensure Google Chrome (or Chromium) is installed and a compatible ChromeDriver is available on your `PATH`.
+
+- Version compatibility: Chrome and ChromeDriver must have matching major versions (for example Chrome 116 → ChromeDriver 116). If versions differ you may see session or startup errors.
+
+- Installing ChromeDriver:
+	- Linux (Debian/Ubuntu): `sudo apt install chromium-chromedriver` (package name and availability vary by distro).
+	- Manual: download the matching driver from https://chromedriver.chromium.org/downloads and place it on your `PATH`.
+
+- Alternative (recommended): use `webdriver-manager` to automatically download the correct driver:
+
+```bash
+pip install webdriver-manager
+```
+
+Example Python usage with `webdriver-manager`:
+
+```python
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+
+driver = webdriver.Chrome(ChromeDriverManager().install())
+```
+
+Using `webdriver-manager` avoids manual driver installs and version mismatch issues.
+
 ## Logs
 Logs are written into the directory specified by `LOG_DIR` (default: `logs`). Log filename includes a timestamp.
