@@ -13,7 +13,7 @@ Small automation script to log into the LSF portal, fetch the "Notenspiegel" tab
 1. Clone the repository:
 
 ```bash
-git clone https://github.com./tiagomorato/lsf-automation.git
+git clone https://github.com/tiagomorato/lsf-automation.git
 cd lsf-automation
 ```
 
